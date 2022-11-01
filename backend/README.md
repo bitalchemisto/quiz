@@ -35,3 +35,7 @@ columns: item_id (PK), item_type (meetingroom), unit_price, ...
 
 4. Estimate time and cost for development
 
+# Submission:
+1. Database design: https://drive.google.com/file/d/1kYmG1zGD9I3jjoSu-PSohvo7G9cUF8OA/view?usp=sharing
+2. Specification: https://docs.google.com/spreadsheets/d/1GAr63wwG5y8Yf39Z9Y88eIkW9i6HlZPwseG2Kj0IzkQ/edit?usp=sharing
+- I've just created some user stories as example not all the needed ones
