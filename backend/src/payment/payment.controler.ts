@@ -8,8 +8,25 @@ export class PaymentController {
   constructor(private readonly paymentService: PaymentService) {}
 
   @Post('/payment')
-  @ApiOperation({ summary: 'Integrated Stripe payment gateway for fiat type' })
-  paymentGateway(@Body(ValidationPipe) paymentDto: PaymentInput) {
-    return this.paymentService.create(paymentDto);
+  @ApiOperation({ summary: '' })
+  async paymentGateway(@Body(ValidationPipe) paymentDto: PaymentInput) {
+    const bookingRoom = await this.paymentService.createBookingRoom(
+      paymentDto.bookingRooms
+    );
+    const contactInforInput = {
+      company: paymentDto.company,
+      name: paymentDto.name,
+      email: paymentDto.email,
+      mobile: paymentDto.mobile,
+    };
+
+    const contactInfor = await this.paymentService.createContactInformation(
+      contactInforInput
+    );
+
+    return await this.paymentService.createPurchaseOrder({
+      contactId: contactInfor.id,
+      bookingRoomId: bookingRoom.id,
+    });
   }
 }

@@ -41,7 +41,7 @@ model MeetingRooms {
   location          Locations   @relation(fields: [locationId], references: [id])
 }
 
-model BookRooms {
+model BookingRooms {
   id                String   @id @default(cuid())
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
@@ -53,6 +53,7 @@ model BookRooms {
   totalAmount       Float
   breakDown         String
   userId            String
+  meetingRooms      MeetingRooms   @relation(fields: [roomId], references: [id])
 }
 
 model Locations {
@@ -68,6 +69,24 @@ model Locations {
   meetingRooms      MeetingRooms[]
 }
 
+model ContactInformation {
+  id                String @id @default(cuid))
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  company           String
+  name              String
+  email             String
+  mobile            String
+}
+
+model PurchaseOrder {
+  id                String @id @default(cuid))
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  contactId         String 
+  bookingRoomId     String
+
+}
 
 enum Role {
   ADMIN
