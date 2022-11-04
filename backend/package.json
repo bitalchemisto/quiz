@@ -1,8 +1,8 @@
 {
-  "name": "nestjs-prisma-client-starter",
+  "name": "nestjs-prisma-client",
   "version": "0.0.1",
-  "description": "NestJS Prisma Client Starter Project",
-  "author": "Marc Stammerjohann",
+  "description": "NestJS Prisma Client Project",
+  "author": "",
   "license": "MIT",
   "keywords": [
     "nestjs",
@@ -12,13 +12,6 @@
     "passport",
     "graphql"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fivethree-team/nestjs-prisma-client-example.git"
-  },
-  "bugs": {
-    "url": "https://github.com/fivethree-team/nestjs-prisma-client-example/issues"
-  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
