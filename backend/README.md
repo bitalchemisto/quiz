@@ -45,6 +45,20 @@ project using:  Nestjs, postgres, graphql, prisma
 
 api: /payment 
 Save booking rooms into purchase order
+params input
+```{
+	"company": "",
+	"name": "",
+	"email": "",
+	"mobile": "",
+	"bookingRooms":[{
+		"roomId": "",
+		"attendance": "2",
+		"request": "",
+		"startTime": "2022-11-03T22:30:00.000Z",
+		"endTime": "2022-11-03T23:30:00.000Z"
+	}]
+}```
 
 graphql query: availableMeetingRooms
 create graphql query demo by "query_available_meeting_rooms_by_location_preload"
